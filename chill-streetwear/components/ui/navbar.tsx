@@ -49,9 +49,6 @@ export default function Navbar() {
               </span>
             )}
           </button>
-          <button className="hidden md:block text-black hover:text-black/60 transition-colors">
-            <User className="w-5 h-5" />
-          </button>
         </div>
       </header>
 
