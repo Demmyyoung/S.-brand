@@ -22,7 +22,7 @@ export default function Navbar() {
           <Link href="/" className="block relative w-32 h-12">
             <Image
               src="/images/logo.jpg"
-              alt="Chill Brand"
+              alt="SWXN"
               fill
               className="object-contain"
               priority
