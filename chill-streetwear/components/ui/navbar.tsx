@@ -3,8 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Search, ShoppingBag, User, Menu } from "lucide-react";
+import { useCart } from "@/components/cart/cart-context";
 
 export default function Navbar() {
+  const { toggleCart, totalItems } = useCart();
+
   return (
     <>
       {/* 
@@ -35,11 +38,16 @@ export default function Navbar() {
           <button className="text-black hover:text-black/60 transition-colors">
             <Search className="w-5 h-5" />
           </button>
-          <button className="text-black hover:text-black/60 transition-colors relative">
+          <button
+            onClick={toggleCart}
+            className="text-black hover:text-black/60 transition-colors relative"
+          >
             <ShoppingBag className="w-5 h-5" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-black text-white text-[10px] flex items-center justify-center rounded-full">
-              2
-            </span>
+            {totalItems > 0 && (
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-black text-white text-[10px] flex items-center justify-center rounded-full">
+                {totalItems}
+              </span>
+            )}
           </button>
           <button className="hidden md:block text-black hover:text-black/60 transition-colors">
             <User className="w-5 h-5" />
