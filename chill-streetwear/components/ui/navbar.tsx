@@ -60,21 +60,24 @@ export default function Navbar() {
       <nav className="hidden md:flex fixed top-0 left-0 h-full flex-col justify-center gap-12 pl-8 z-40">
         <Link
           href="/about"
-          className="text-sm font-medium text-black hover:text-black/60 transition-colors uppercase tracking-widest writing-vertical-lr -rotate-180 md:rotate-0 md:writing-horizontal-tb"
+          className="text-sm font-medium text-black transition-colors uppercase tracking-widest writing-vertical-lr -rotate-180 md:rotate-0 md:writing-horizontal-tb group relative w-fit"
         >
           About
+          <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-black transition-all duration-300 ease-out group-hover:w-full"></span>
         </Link>
         <Link
           href="/shop/bottoms"
-          className="text-sm font-medium text-black hover:text-black/60 transition-colors uppercase tracking-widest"
+          className="text-sm font-medium text-black transition-colors uppercase tracking-widest group relative w-fit"
         >
           Bottoms
+          <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-black transition-all duration-300 ease-out group-hover:w-full"></span>
         </Link>
         <Link
           href="/shop/tees"
-          className="text-sm font-medium text-black hover:text-black/60 transition-colors uppercase tracking-widest"
+          className="text-sm font-medium text-black transition-colors uppercase tracking-widest group relative w-fit"
         >
           Tees
+          <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-black transition-all duration-300 ease-out group-hover:w-full"></span>
         </Link>
       </nav>
     </>
