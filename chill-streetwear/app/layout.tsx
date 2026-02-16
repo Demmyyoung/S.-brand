@@ -31,11 +31,9 @@ export default function RootLayout({
         className={`${mulish.className} antialiased selection:bg-gray-200 selection:text-black bg-[#FAFAFA] text-[#171717]`}
       >
         <CartProvider>
-          <SmoothScroll>
-            <Navbar />
-            <CartSidebar />
-            {children}
-          </SmoothScroll>
+          <Navbar />
+          <CartSidebar />
+          <SmoothScroll>{children}</SmoothScroll>
         </CartProvider>
       </body>
     </html>

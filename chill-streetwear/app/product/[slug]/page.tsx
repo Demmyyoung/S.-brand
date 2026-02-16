@@ -3,17 +3,18 @@
 import { use, useEffect, useState } from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getProductBySlug, getProducts } from "@/lib/products";
+import { getProductBySlug } from "@/lib/products";
 import { Product } from "@/lib/types";
 import { useCart } from "@/components/cart/cart-context";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export async function generateStaticParams() {
-  const products = await getProducts();
-  return products.map((product) => ({
-    slug: product.attributes.slug,
-  }));
+  return [
+    { slug: "essential-garment-1" },
+    { slug: "essential-garment-2" },
+    { slug: "essential-garment-3" },
+  ];
 }
 
 export default function ProductPage({

@@ -1,5 +1,9 @@
 "use client";
 
+import { useState } from "react";
+import MobileMenu from "./mobile-menu";
+
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Search, ShoppingBag, User, Menu } from "lucide-react";
@@ -7,16 +11,27 @@ import { useCart } from "@/components/cart/cart-context";
 
 export default function Navbar() {
   const { toggleCart, totalItems } = useCart();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  if (pathname === "/checkout") return null;
 
   return (
     <>
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
       {/* 
         Top Header: Seamless/Transparent
         Contains: Hamburger (Mobile), Logo (Center), Utilities (Right)
       */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 pointer-events-none">
+      <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-8 py-6 pointer-events-none">
         {/* Mobile Menu Icon (Left) - Visible on Mobile Only */}
-        <button className="md:hidden text-black pointer-events-auto">
+        <button
+          onClick={() => setIsMobileMenuOpen(true)}
+          className="md:hidden text-black pointer-events-auto"
+        >
           <Menu className="w-5 h-5" />
         </button>
 

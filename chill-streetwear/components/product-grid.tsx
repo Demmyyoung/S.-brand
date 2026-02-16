@@ -45,7 +45,7 @@ export default function ProductGrid() {
                 {/* Quick Add Button */}
                 <button
                   onClick={(e) => handleQuickAdd(e, product)}
-                  className="absolute bottom-4 right-4 bg-white text-black p-3 rounded-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-black hover:text-white z-10"
+                  className="absolute bottom-4 right-4 bg-white text-black p-3 rounded-full translate-y-0 opacity-100 lg:translate-y-4 lg:opacity-0 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-black hover:text-white z-10"
                   aria-label="Quick Add to Cart"
                 >
                   <Plus className="w-5 h-5" />
